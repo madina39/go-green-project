@@ -1,14 +1,13 @@
-resource "aws_s3_bucket" "gogreenbucketibragimov" {
-  bucket = "gogreenbucketibragimov"
+resource "aws_s3_bucket" "gogreenbucketmadina0-3" {
 
   tags = {
-    Name        = "gogreenbucketibragimov"
+    Name        = "gogreenbucketmadina0-3"
     Environment = "APP"
   }
 }
 
 resource "aws_s3_bucket_public_access_block" "bucket_acces" {
-  bucket = aws_s3_bucket.gogreenbucketibragimov.id
+  bucket = aws_s3_bucket.gogreenbucketmadina0-3.id
 
   block_public_acls       = true
   block_public_policy     = true

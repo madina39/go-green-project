@@ -2,7 +2,7 @@ resource "aws_launch_configuration" "apptier" {
   # name_prefix     = var.prefix
   image_id        = data.aws_ami.amazon-linux2.id
   instance_type   = "t2.micro"
-  key_name        = aws_key_pair.apptier.key_name
+  #key_name        = aws_key_pair.apptier.key_name
   security_groups = [module.app_security_group.security_group_id["app_sg"]]
   # user_data       = templatefile("files/application_docker_user_data.tmpl", {app_repo = var.app_repo, app_name = var.app_name, database_name = var.database_name})
   user_data = <<-EOF
@@ -32,10 +32,10 @@ resource "aws_launch_configuration" "apptier" {
     create_before_destroy = true
   }
 }
-resource "aws_key_pair" "apptier" {
-  key_name   = "apptier-key"
-  public_key = file("~/.ssh/cloud2024.pem.pub")
-}
+# resource "aws_key_pair" "apptier" {
+#   key_name   = "apptier-key"
+#   public_key = file("~/.ssh/cloud2024.pem.pub")
+# }
 
 resource "aws_lb_target_group" "apptier_tg" {
   # name_prefix = var.prefix

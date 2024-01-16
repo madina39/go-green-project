@@ -1,6 +1,7 @@
 module "bastion_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
+  # insert required variables here
   # insert required variables here
   vpc_id = aws_vpc.vpc.id
   security_groups = {
@@ -28,10 +29,10 @@ module "bastion_security_group" {
     }
   }
 }
-
 module "web_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
+  # insert required variables here
   # insert required variables here
   vpc_id = aws_vpc.vpc.id
   security_groups = {
@@ -71,10 +72,10 @@ module "web_security_group" {
     }
   }
 }
-
 module "app_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
+  # insert required variables here
   # insert required variables here
   vpc_id = aws_vpc.vpc.id
   security_groups = {
@@ -109,10 +110,10 @@ module "app_security_group" {
     }
   }
 }
-
 module "database_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
+  # insert required variables here
   # insert required variables here
   vpc_id = aws_vpc.vpc.id
   security_groups = {
@@ -138,10 +139,10 @@ module "database_security_group" {
     }
   }
 }
-
 module "alb_web_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
+  # insert required variables here
   # insert required variables here
   vpc_id = aws_vpc.vpc.id
   security_groups = {
@@ -181,9 +182,10 @@ module "alb_web_security_group" {
 }
 
 module "alb_app_security_group" {
-  source  = "app.terraform.io/sanjarbey/security-groups/aws"
+  source  = "app.terraform.io/madinaterraformcloud/security-groups/aws"
   version = "2.0.0"
-  vpc_id  = aws_vpc.vpc.id
+  # insert required variables here
+  vpc_id = aws_vpc.vpc.id
   security_groups = {
     "alb_app_sg" : {
       description = "Security group for app loadbalancer"
